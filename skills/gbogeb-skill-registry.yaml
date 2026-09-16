@@ -1,0 +1,24 @@
+schema: gbogeb.skill.registry.v1
+as_of: '2026-09-16T21:53:00+02:00'
+ssot_repo: GBOGEB/skills
+skills:
+  math:
+    path: skills/math/SKILL.md
+    provider: GBOGEB/gg_MATH
+    orchestrator: GBOGEB/pipeline-automation-hub
+  plots:
+    path: skills/plots/SKILL.md
+    interactive_reference: GBOGEB/plotly.py
+    static_renderer: matplotlib
+    orchestrator: GBOGEB/pipeline-automation-hub
+  math-plots:
+    path: skills/math-plots/SKILL.md
+    composes: [math, plots]
+    provider: GBOGEB/gg_MATH
+    orchestrator: GBOGEB/pipeline-automation-hub
+forecast_policy:
+  horizon: N_plus_2_rolling
+  preserve_historical_predictions: true
+  score_against_actuals: true
+  update_estimator_after_observation: true
+authority_transfer: false
