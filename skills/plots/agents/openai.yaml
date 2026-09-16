@@ -1,0 +1,3 @@
+interface:
+  display_name: "Plots"
+  short_description: "Plotly interactive and Matplotlib static visualization"
